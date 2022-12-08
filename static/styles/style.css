@@ -140,6 +140,10 @@
   font-size: 2rem;
   color:#02042c;
 }
+.hideclass{
+  display:none;
+}
+
 
 /* Tablets and under */
 @media (max-width: 768px) {

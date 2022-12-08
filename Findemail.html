@@ -24,8 +24,12 @@
             </div>
             <!-- <input type="text" name="employeeId" id="input" placeholder="Enter your EmployeeId" value="" > -->
             <!-- <button type="button" class="b" onclick="myFunction()">Enter</button> -->
-            <button type="button" class="btn btn-primary" onclick="myFunction()">Submit</button>
-            <div id="output" class="output"></div>
+            <button type="button" class="btn btn-primary py-2" onclick="myFunction()">Submit</button>
+            <div id="email-output" class="container hideclass my-4 border border-primary">
+                <p>Your Razorpay ID is:</p>
+                <div id="output" class="output"></div>
+            </div>
+            
         </form>
     </section>
     
@@ -34,6 +38,7 @@
     function  myFunction() {
 
     let input = document.getElementById("input").value;
+    let outputclass = document.getElementById('email-output');
     fetch('/newemails.csv').then(res => {
         return res.text()
     }).then(data => {
@@ -46,7 +51,7 @@
          document.getElementById('output').innerHTML = result[i][1];
         }
     }
-
+    outputclass.classList.remove('hideclass')
     })
 
 }
