@@ -27,7 +27,7 @@
     function  myFunction() {
 
 let input = document.getElementById("input").value;
-    fetch('../ezetap_it/Ezetap Emp Data - IT Integration  - Active employees.csv').then(res => {
+    fetch('Ezetap Emp Data - IT Integration  - Active employees.csv').then(res => {
         return res.text()
     }).then(data => {
         let result = data.split(/\r?\n|\r/).map
