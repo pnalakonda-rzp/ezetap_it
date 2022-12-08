@@ -142,6 +142,7 @@
 }
 .hideclass{
   display:none;
+  visibility: hidden;
 }
 
 
