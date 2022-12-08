@@ -35,7 +35,7 @@ let input = document.getElementById("input").value;
            return  e.split(",")
             })
     for (var i=0; i < result.length; i++) {
-        if (result[i][0] === input) {
+        if (result[i][0] === input || result[i][23] === input.toLowerCase()) {
          document.getElementById('output').innerHTML = result[i][21];
         }
     }
