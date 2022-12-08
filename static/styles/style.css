@@ -136,6 +136,11 @@
   color:rgb(243, 240, 240);
 }
 
+.output{
+  font-size: 2rem;
+  color:#02042c;
+}
+
 /* Tablets and under */
 @media (max-width: 768px) {
   .hero-box{

@@ -14,20 +14,27 @@
     <div class="d-flex justify-content-center navbar">
         <img style="width:250px;" class="" src="static/images/rzp-logo-negative.png">
     </div>
-    <form action="#" id="theForm" onsubmit="return false;">
-        <label>To Know Your Email</label>
-        <input type="text" name="employeeId" id="input" placeholder="Enter your EmployeeId" value="" >
-        <button type="button" class="b" onclick="myFunction()">Enter</button>
-        <div id="output" class="output"></div>
-    </form>
-
-
+    <section class="d-flex justify-content-center py-4">
+        <form action="#" id="theForm" onsubmit="return false;">
+            <div class="form-group">
+                <label for="inputEmail1">Enter your <b>Ezetap Email</b> to know Razorpay ID </label>
+                
+                <input type="email" name="employeeId" value="" id="input" class="form-control" id="inputEmail1" aria-describedby="emailHelp" placeholder="Enter Ezetap email ID">
+                <small id="emailHelp" class="form-text text-muted">example: pavan.nalakonda@EZETAP.com</small>
+            </div>
+            <!-- <input type="text" name="employeeId" id="input" placeholder="Enter your EmployeeId" value="" > -->
+            <!-- <button type="button" class="b" onclick="myFunction()">Enter</button> -->
+            <button type="button" class="btn btn-primary" onclick="myFunction()">Submit</button>
+            <div id="output" class="output"></div>
+        </form>
+    </section>
+    
     <script >  
 
     function  myFunction() {
 
-let input = document.getElementById("input").value;
-    fetch('/Ezetap Emp Data - IT Integration  - Active employees.csv').then(res => {
+    let input = document.getElementById("input").value;
+    fetch('/newemails.csv').then(res => {
         return res.text()
     }).then(data => {
         let result = data.split(/\r?\n|\r/).map
@@ -35,8 +42,8 @@ let input = document.getElementById("input").value;
            return  e.split(",")
             })
     for (var i=0; i < result.length; i++) {
-        if (result[i][0] === input || result[i][23] === input.toLowerCase()) {
-         document.getElementById('output').innerHTML = result[i][21];
+        if (result[i][0] === input.toLowerCase()) {
+         document.getElementById('output').innerHTML = result[i][1];
         }
     }
 
